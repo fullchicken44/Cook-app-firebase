@@ -22,7 +22,7 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity {
     private final String dbAPI = "https://android-2a378-default-rtdb.asia-southeast1.firebasedatabase.app/";
     DatabaseReference mealDb = FirebaseDatabase.getInstance(dbAPI).getReference("meals");
-    List<Meal> mealList = new ArrayList<Meal>();
+    List<Meal> mainMealList = new ArrayList<Meal>();
     int countMeal = 0;
     Meal meal;
     FirebaseDB firebaseHandler = new FirebaseDB();
@@ -32,11 +32,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mealList = firebaseHandler.fetchAllMeal(mealDb);
-        System.out.println(mealList);
+        firebaseHandler.fetchAllMeal(mealDb, mealList -> {
+            mainMealList = (List<Meal>) mealList;
+        });
+        System.out.println(mainMealList);
 //        firebaseHandler.postMeal(mealList.get(5), mealDb);
 
     }
 
+    public interface firebaseCallback {
+        void call(Meal mealList);
+    }
 
 }

@@ -20,7 +20,7 @@ public class FirebaseDB {
     private Meal meal;
     private final String dbAPI = "https://android-2a378-default-rtdb.asia-southeast1.firebasedatabase.app/";
 
-    public List<Meal> fetchAllMeal(DatabaseReference mealDb) {
+    public void fetchAllMeal(DatabaseReference mealDb, MainActivity.firebaseCallback callback) {
         List<Meal> mealList = new ArrayList<Meal>();
         mealDb.addValueEventListener(new ValueEventListener() {
             @Override
@@ -37,7 +37,6 @@ public class FirebaseDB {
                 Log.w("TAG", "loadMeal :onCancelled", error.toException());
             }
         });
-        return mealList;
     }
 
     public Meal fetchMealById(List<Meal> mealList, String id) {
@@ -66,6 +65,10 @@ public class FirebaseDB {
         System.out.println("youtube: " + meal.getStrYoutube());
         System.out.println("ingredient1: " + meal.getStrIngredient1());
         System.out.println("measure2: " + meal.getStrMeasure2());
+    }
+
+    public interface firebaseCallback {
+        void call(Meal mealList);
     }
 }
 
