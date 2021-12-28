@@ -29,8 +29,10 @@ public class FirebaseDB {
     private FirebaseDatabase mDatabase;
     private DatabaseReference mReferenceUser;
     private DatabaseReference mReferenceMeal;
+    private DatabaseReference mReferenceUserSaveList;
 
-    // Data interact is asynchronous
+    // Interface
+
     public interface DataStatus{
         void DataIsLoaded(List<User> user, List<String> keys);
         void DataIsInserted();
@@ -41,6 +43,7 @@ public class FirebaseDB {
     public void FirebaseDatabaseHelper(){
         mDatabase = FirebaseDatabase.getInstance();
         mReferenceUser = mDatabase.getReference("users");
+        mReferenceUserSaveList = mDatabase.getReference("users").child("collection");
         mReferenceMeal = mDatabase.getReference("meals");
     }
 
@@ -119,6 +122,20 @@ public class FirebaseDB {
         });
     }
 
+
+
+    // Update User Save Lists
+
+    public void updateUsersSaveLists(String key, User user, final DataStatus dataStatus) {
+        mReferenceUserSaveList.child(key).setValue(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                dataStatus.DataIsUpdated();
+            }
+
+        });
+    }
+
     // Old Update Meals
 //    public void updateMeal(String idMeal, String strArea, String strCategory, String strMeal, String strDrinkAlternate,
 //                           String strInstructions, String strMealThumb, String strTags, String strYoutube,
@@ -194,6 +211,7 @@ public class FirebaseDB {
 
     public interface firebaseCallback {
         void call(Meal mealList);
+        void call(User userList);
     }
 }
 
