@@ -42,8 +42,8 @@ public class FirebaseDB {
 
     public void FirebaseDatabaseHelper(){
         mDatabase = FirebaseDatabase.getInstance();
-        mReferenceUser = mDatabase.getReference("users");
-        mReferenceUserSaveList = mDatabase.getReference("users").child("collection");
+        mReferenceUser = mDatabase.getReference("users").child("users");
+        mReferenceUserSaveList = mDatabase.getReference("users").child("users").child("collection");
         mReferenceMeal = mDatabase.getReference("meals");
     }
 
