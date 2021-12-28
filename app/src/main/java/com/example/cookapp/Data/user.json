@@ -1,0 +1,154 @@
+{
+    "users": [
+        {
+            "userEmail": "nguyenle@gmail.com",
+            "userName": "Nguyen Le",
+            "collection": [
+                "Beef Wellington",
+                "Beef stroganoff",
+                "Broccoli & Stilton soup"
+            ],
+            "mealCreate": [
+                "Beef Dumpling Stew",
+                "Blackberry Fool",
+                "Beef Bourguignon"
+            ],
+            "isAdmin": true
+        },
+        {
+            "userEmail": "leanhquan@gmail.com",
+            "userName": "Le Anh Quan",
+            "collection": [
+                "Boulang\u00e8re Potatoes",
+                "Beef Lo Mein",
+                "BBQ Pork Sloppy Joes"
+            ],
+            "mealCreate": [
+                "Chocolate Gateau",
+                "Christmas Pudding Flapjack",
+                "Chicken Handi"
+            ],
+            "isAdmin": true
+        },
+        {
+            "userEmail": "jimmyNguyen@gmail.com",
+            "userName": "Nguyen Jimmy",
+            "collection": [
+                "Poutine",
+                "Pancakes",
+                "Peanut Butter Cheesecake"
+            ],
+            "mealCreate": [
+                "Parkin Cake",
+                "Proven\u00e7al Omelette Cake",
+                "Pouding chomeur"
+            ],
+            "isAdmin": false
+        },
+        {
+            "userEmail": "dangnguyennguyendinh@gmail.com",
+            "userName": "Nguyen Dinh Dang Nguyen",
+            "collection": [
+                "Chicken Fajita Mac and Cheese",
+                "Cajun spiced fish tacos",
+                "Crock Pot Chicken Baked Tacos"
+            ],
+            "mealCreate": [
+                "Chicken Karaage",
+                "Coq au vin",
+                "Chilli prawn linguine"
+            ],
+            "isAdmin": true
+        },
+        {
+            "userEmail": "phongchannguyen@gmail.com",
+            "userName": "Nguyen Chan Phong",
+            "collection": [
+                "Clam chowder",
+                "Chicken & mushroom Hotpot",
+                "Chocolate Avocado Mousse"
+            ],
+            "mealCreate": [
+                "Choc Chip Pecan Pie",
+                "Carrot Cake",
+                "Chelsea Buns"
+            ],
+            "isAdmin": true
+        },
+        {
+            "userEmail": "jamesbond007@gmail.com",
+            "userName": "James Bond",
+            "collection": [
+                "Callaloo Jamaican Style",
+                "Smoked Haddock Kedgeree",
+                "Shawarma"
+            ],
+            "mealCreate": [
+                "Soy-Glazed Meatloaves with Wasabi Mashed Potatoes & Roasted Carrots",
+                "Strawberry Rhubarb Pie",
+                "Tahini Lentils"
+            ],
+            "isAdmin": false
+        },
+        {
+            "userEmail": "DwayneJohnson@gmail.com",
+            "userName": "The Rock",
+            "collection": [
+                "Japanese Katsudon",
+                "Cajun spiced fish tacos",
+                "Escovitch Fish"
+            ],
+            "mealCreate": [
+                "Fish pie",
+                "Fish Stew with Rouille",
+                "Fish fofos"
+            ],
+            "isAdmin": false
+        },
+        {
+            "userEmail": "Hansolo@gmail.com",
+            "userName": "Han ",
+            "collection": [
+                "Massaman Beef curry",
+                "Matar Paneer",
+                "McSinghs Scotch pie"
+            ],
+            "mealCreate": [
+                "Montreal Smoked Meat",
+                "Ma Po Tofu",
+                "Mince Pies"
+            ],
+            "isAdmin": false
+        },
+        {
+            "userEmail": "Hitman47@gmail.com",
+            "userName": "47",
+            "collection": [
+                "American breakfast (Bacon, eggs, pancakes)",
+                "Kumpir",
+                "Raw fresh meat"
+            ],
+            "mealCreate": [
+                "Lamb Rogan josh",
+                "Lamb Biryani",
+                "Lancashire hotpot"
+            ],
+            "isAdmin": false
+        },
+        {
+            "userEmail": "NikoSantos@gmail.com",
+            "userName": "Niko Santos",
+            "collection": [
+                "Peanut Butter Cookies",
+                "Paszteciki (Polish Pasties)",
+                "Piri-piri chicken and slaw"
+            ],
+            "mealCreate": [
+                "Portuguese fish stew (Caldeirada de peixe)",
+                "Rigatoni with fennel sausage sauce",
+                "Recheado Masala Fish"
+            ],
+            "isAdmin": false
+        }
+    ]
+}

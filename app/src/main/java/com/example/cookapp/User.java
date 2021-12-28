@@ -1,11 +1,23 @@
 package com.example.cookapp;
 
-import java.util.List;
+import androidx.annotation.NonNull;
 
+import com.google.firebase.database.Exclude;
+import com.google.firebase.database.IgnoreExtraProperties;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@IgnoreExtraProperties
 public class User {
     String email, name;
     List<Meal> collection, mealCreate;
     boolean isAdmin;
+
+    public User() {
+        // Default constructor required for calls to DataSnapshot.getValue(User.class)
+    }
 
     public User(String email, String name, List<Meal> collection, List<Meal> mealCreate, boolean isAdmin) {
         this.email = email;
@@ -14,6 +26,20 @@ public class User {
         this.mealCreate = mealCreate;
         this.isAdmin = isAdmin;
     }
+
+    // Update specific fields
+    @Exclude
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("email", email);
+        result.put("name", name);
+        result.put("collection", collection);
+        result.put("mealCreate", mealCreate);
+        result.put("isAdmin", isAdmin);
+
+        return result;
+    }
+
 
     public String getEmail() {
         return email;
@@ -53,5 +79,17 @@ public class User {
 
     public void setAdmin(boolean admin) {
         isAdmin = admin;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "User{" +
+                "email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                ", collection=" + collection +
+                ", mealCreate=" + mealCreate +
+                ", isAdmin=" + isAdmin +
+                '}';
     }
 }

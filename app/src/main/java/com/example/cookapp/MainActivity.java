@@ -20,7 +20,9 @@ import java.util.List;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
-    private final String dbAPI = "https://android-2a378-default-rtdb.asia-southeast1.firebasedatabase.app/";
+    // private final String dbAPI = "https://android-2a378-default-rtdb.asia-southeast1.firebasedatabase.app/";
+    private final String dbAPI = "https://s3777242androidfinal-default-rtdb.firebaseio.com/";
+
     DatabaseReference mealDb = FirebaseDatabase.getInstance(dbAPI).getReference("meals");
     List<Meal> mainMealList = new ArrayList<Meal>();
     int countMeal = 0;
@@ -43,5 +45,6 @@ public class MainActivity extends AppCompatActivity {
     public interface firebaseCallback {
         void call(Meal mealList);
     }
+
 
 }
