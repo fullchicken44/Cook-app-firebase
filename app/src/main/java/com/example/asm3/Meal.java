@@ -1,15 +1,18 @@
 package com.example.asm3;
 
+import java.util.HashMap;
+
 public class Meal {
     String idMeal = "";
     String strArea = "";
     String strCategory= "";
-    String strMeal= "";
+    String strMeal= "";//name
     String strDrinkAlternate= "";
     String strInstructions= "";
     String strMealThumb= "", strTags= "", strYoutube= "", strImageSource= "", dateModified= "";
-//    int rating, vote;
-//    boolean approve = true;
+    HashMap<String, String> ingredients;
+    int rating, vote;
+    boolean approve = true;
     String strIngredient1 = "", strIngredient2= "", strIngredient3= "", strIngredient4= "", strIngredient5= "", strIngredient6= "", strIngredient7= "", strIngredient8= "", strIngredient9= "",
             strIngredient10= "", strIngredient11= "", strIngredient12= "", strIngredient13= "", strIngredient14= "", strIngredient15= "", strIngredient16= "", strIngredient17= "", strIngredient18= "",
             strIngredient19= "", strIngredient20= "";
@@ -72,6 +75,19 @@ public class Meal {
         this.strMeasure19 = strMeasure19;
         this.strMeasure20 = strMeasure20;
     }
+//
+//    public Meal(String idMeal, String strMeal, String strCategory, String strArea, String strInstructions, String strMealThumb, String strTags, String strYoutube, String strImageSource, HashMap<String, String> ingredients) {
+//        this.idMeal = idMeal; //id
+//        this.strMeal = strMeal; //name
+//        this.strCategory = strCategory; //category
+//        this.strArea = strArea; //area
+//        this.strInstructions = strInstructions; //instruction
+//        this.strMealThumb = strMealThumb; //image
+//        this.strTags = strTags;
+//        this.strYoutube = strYoutube;
+//        this.strImageSource = strImageSource;
+//        this.ingredients = ingredients;
+//    }
 
     public String getIdMeal() {
         return idMeal;

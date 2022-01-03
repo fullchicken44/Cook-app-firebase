@@ -1,60 +1,94 @@
 package com.example.asm3;
 
-import java.util.ArrayList;
+import androidx.annotation.NonNull;
+
+import com.google.firebase.database.Exclude;
+import com.google.firebase.database.IgnoreExtraProperties;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+@IgnoreExtraProperties
 public class User {
-    private String email, name, password;
-    private List<String> savedDish;
-
+    String userEmail ="", userName = "";
+    List<String> collection, mealCreate;
+    boolean isAdmin;
 
     public User() {
-        this.email = null;
-        this.name = null;
-        this.password = null;
-        this.savedDish = new ArrayList<>();
+        // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
 
-    public User(String email, String name, String password, List<String> savedDish) {
-        this.email = email;
-        this.name = name;
-        this.password = password;
-        this.savedDish = savedDish;
+    public User(String userEmail, String userName, List<String> collection, List<String> mealCreate, boolean isAdmin) {
+        this.userEmail = userEmail;
+        this.userName = userName;
+        this.collection = collection;
+        this.mealCreate = mealCreate;
+        this.isAdmin = isAdmin;
     }
 
-    public void addDish(String name){
-        savedDish.add(name);
+    // Update specific fields
+    @Exclude
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("userEmail", userEmail);
+        result.put("userName", userName);
+        result.put("collection", collection);
+        result.put("mealCreate", mealCreate);
+        result.put("isAdmin", isAdmin);
+
+        return result;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 
-    public String getName() {
-        return name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getPassword() {
-        return password;
+    public List<String> getCollection() {
+        return collection;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setCollection(List<String> collection) {
+        this.collection = collection;
     }
 
-    public List<String> getSavedDish() {
-        return savedDish;
+    public List<String> getMealCreate() {
+        return mealCreate;
     }
 
-    public void setSavedDish(List<String> savedDish) {
-        this.savedDish = savedDish;
+    public void setMealCreate(List<String> mealCreate) {
+        this.mealCreate = mealCreate;
+    }
+
+    public boolean getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(boolean admin) {
+        isAdmin = admin;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "User{" +
+                "userEmail='" + userEmail + '\'' +
+                ", userName='" + userName + '\'' +
+                ", collection=" + collection +
+                ", mealCreate=" + mealCreate +
+                ", isAdmin=" + isAdmin +
+                '}';
     }
 }
