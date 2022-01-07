@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.asm3">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,6 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ASM3">
+        <activity
+            android:name=".ActivityUserPage"
+            android:exported="true" />
+
+        <activity
+            android:name=".PostMealPage"
+            android:exported="true" />
+
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@xml/actions" />

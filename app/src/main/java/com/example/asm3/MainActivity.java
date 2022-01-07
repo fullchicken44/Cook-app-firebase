@@ -7,6 +7,7 @@ import static android.content.ContentValues.TAG;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
@@ -62,9 +63,7 @@ public class MainActivity extends AppCompatActivity {
     DatabaseReference userDb = FirebaseDatabase.getInstance(dbAPI).getReference("user").child("users");
     List<Meal> mainMealList = new ArrayList<Meal>();
     List<User> mainUserList = new ArrayList<User>();
-    int countMeal = 0;
     Meal meal;
-    User user;
     FirebaseDB firebaseHandler = new FirebaseDB();
 
     @SuppressLint("WrongConstant")
@@ -188,8 +187,9 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     Log.i(TAG, "Click on back button: ");
                     Toast.makeText(getApplicationContext(),"Home Button",Toast.LENGTH_LONG).show();
-//                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-//                startActivity(intent);
+                //Intent intent = new Intent(MainActivity.this, ActivityUserPage.class);
+                Intent intent = new Intent(MainActivity.this, PostMealPage.class);
+                startActivity(intent);
                 }
 
             });
@@ -295,32 +295,9 @@ public class MainActivity extends AppCompatActivity {
 
             });
 
-
-
-
-
-
-
         });
 
-
-
-
-
-
-        // Users
-//        firebaseHandler.fetchAllUser(userDb, userList -> {
-//            for (int i = 0; i < userList.size();i++) {
-//                user = (User) userList.get(i);
-//                mainUserList.add(user);
-//            }
-//
-//            Log.d("TAG", "User trong day la: " + mainUserList.get(5).toString());
-//
-//        });
-
     }
-
 
     public interface firebaseCallback {
         void call(List list);

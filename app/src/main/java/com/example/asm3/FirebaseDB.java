@@ -72,7 +72,7 @@ public class FirebaseDB {
     }
 
     // Fetch all user
-    public void fetchAllUser(DatabaseReference userDb, MainActivity.firebaseCallback callback) {
+    public void fetchAllUser(DatabaseReference userDb, ActivityUserPage.firebaseCallback callback) {
         List<User> userList = new ArrayList<User>();
         userDb.addValueEventListener(new ValueEventListener() {
             @Override

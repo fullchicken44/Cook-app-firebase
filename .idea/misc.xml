@@ -33,8 +33,13 @@
         <entry key="app/src/main/res/drawable/round_corner.xml" value="0.26666666666666666" />
         <entry key="app/src/main/res/drawable/round_top_corner.xml" value="0.26666666666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15070921985815602" />
+        <entry key="app/src/main/res/layout/activity_post_meal_page.xml" value="0.16485507246376813" />
         <entry key="app/src/main/res/layout/activity_user_page.xml" value="0.1381340579710145" />
+        <entry key="app/src/main/res/layout/activity_user_page2.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/content_post_meal_page.xml" value="0.16485507246376813" />
+        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.16485507246376813" />
         <entry key="app/src/main/res/layout/fragment_youtube.xml" value="0.1381340579710145" />
+        <entry key="app/src/main/res/layout/post_meal_page.xml" value="0.1" />
       </map>
     </option>
   </component>
