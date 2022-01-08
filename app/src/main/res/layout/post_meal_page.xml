@@ -11,7 +11,6 @@
         android:layout_alignParentTop="true"
         android:background="@drawable/round_corner"
         android:orientation="horizontal" />
-
     <LinearLayout
         android:id="@+id/back_field_post_meal"
         android:layout_width="match_parent"
@@ -28,7 +27,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="16dp"
             android:background="@color/mint"
-            />
+         />
     </LinearLayout>
 
     <LinearLayout
@@ -81,7 +80,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="16dp"
                 android:drawablePadding="12dp"
-                android:hint="Dish Name"
+                android:hint="Meal Name"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp" />
 
@@ -93,9 +92,10 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="16dp"
                 android:drawablePadding="12dp"
-                android:hint="Dish Category"
+                android:hint="Meal Category"
                 android:paddingStart="10dp"
-                android:paddingEnd="10dp" />
+                android:paddingEnd="10dp"
+                />
 
             <EditText
                 android:id="@+id/input_tag_post_meal"
@@ -105,7 +105,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="16dp"
                 android:drawablePadding="12dp"
-                android:hint="Dish Tag"
+                android:hint="Meal Tag"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp" />
 
@@ -117,7 +117,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="16dp"
                 android:drawablePadding="12dp"
-                android:hint="Dish Tag"
+                android:hint="Meal Area"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp" />
 
@@ -129,7 +129,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="16dp"
                 android:drawablePadding="12dp"
-                android:hint="Dish Alternative Drink "
+                android:hint="Meal Alternative Drink "
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp" />
 
@@ -141,7 +141,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="16dp"
                 android:drawablePadding="12dp"
-                android:hint="Dish Image URL"
+                android:hint="Meal Image URL"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp" />
 
@@ -153,7 +153,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="16dp"
                 android:drawablePadding="12dp"
-                android:hint="Dish Youtube URL"
+                android:hint="Meal Youtube URL"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp" />
 
@@ -165,19 +165,31 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="16dp"
                 android:drawablePadding="12dp"
-                android:hint="Dish Thumbnail URL"
+                android:hint="Meal Thumbnail URL"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp" />
 
             <EditText
-                android:id="@+id/input_ingredient_measure_post_meal"
+                android:id="@+id/input_ingredient_post_meal"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="16dp"
                 android:drawablePadding="12dp"
-                android:hint="Dish Ingredient with Measure"
+                android:hint="Meal Ingredient"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp" />
+
+            <EditText
+                android:id="@+id/input_measure_post_meal"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:drawablePadding="12dp"
+                android:hint="Meal Measure Respectively with Ingredient"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp" />
 
@@ -189,10 +201,9 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="16dp"
                 android:drawablePadding="12dp"
-                android:hint="Dish Instructions"
+                android:hint="Meal Instructions"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp" />
-
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
     //private final String dbAPI = "https://android-2a378-default-rtdb.asia-southeast1.firebasedatabase.app/";
     private final String dbAPI = "https://s3777242androidfinal-default-rtdb.firebaseio.com/";
 
-    DatabaseReference mealDb = FirebaseDatabase.getInstance(dbAPI).getReference("meals");
+    DatabaseReference mealDb = FirebaseDatabase.getInstance(dbAPI).getReference("meal");
     DatabaseReference userDb = FirebaseDatabase.getInstance(dbAPI).getReference("user").child("users");
     List<Meal> mainMealList = new ArrayList<Meal>();
     List<User> mainUserList = new ArrayList<User>();
