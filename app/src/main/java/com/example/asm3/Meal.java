@@ -75,6 +75,8 @@ public class Meal {
         this.strMeasure19 = strMeasure19;
         this.strMeasure20 = strMeasure20;
     }
+
+
 //
 //    public Meal(String idMeal, String strMeal, String strCategory, String strArea, String strInstructions, String strMealThumb, String strTags, String strYoutube, String strImageSource, HashMap<String, String> ingredients) {
 //        this.idMeal = idMeal; //id

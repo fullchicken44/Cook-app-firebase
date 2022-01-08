@@ -187,8 +187,8 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     Log.i(TAG, "Click on back button: ");
                     Toast.makeText(getApplicationContext(),"Home Button",Toast.LENGTH_LONG).show();
-                //Intent intent = new Intent(MainActivity.this, ActivityUserPage.class);
                 Intent intent = new Intent(MainActivity.this, PostMealPage.class);
+                //Intent intent = new Intent(MainActivity.this, ActivityUserPage.class);
                 startActivity(intent);
                 }
 
@@ -256,7 +256,11 @@ public class MainActivity extends AppCompatActivity {
                             .setNegativeButton(android.R.string.cancel, null).show();
                 }
 
+
+
             });
+
+
 
             /*
             Youtube View
@@ -297,6 +301,15 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+
+
+    }
+
+    // Get rating bar
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //ratingBar.getRating();
     }
 
     public interface firebaseCallback {

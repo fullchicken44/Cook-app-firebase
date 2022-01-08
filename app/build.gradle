@@ -45,6 +45,7 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:11.0.1'
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:chromecast-sender:0.26'
+    implementation 'com.google.firebase:firebase-storage:16.0.4'
 
     // Text justify
     implementation 'com.github.bluejamesbond:textjustify-android:2.1.6'
