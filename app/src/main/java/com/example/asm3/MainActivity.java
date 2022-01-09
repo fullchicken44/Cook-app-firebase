@@ -66,11 +66,14 @@ public class MainActivity extends AppCompatActivity {
     Meal meal;
     FirebaseDB firebaseHandler = new FirebaseDB();
 
+    String nameValue = "Apple Frangipan Tart";
+
     @SuppressLint("WrongConstant")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         // Meals
         firebaseHandler.fetchAllMeal(mealDb, mealList -> {
@@ -78,6 +81,15 @@ public class MainActivity extends AppCompatActivity {
                 meal = (Meal) mealList.get(i);
                 mainMealList.add(meal);
             }
+
+            Meal mealObj = new Meal();
+            for(int i=0; i < mainMealList.size(); i++) {
+                if (nameValue.equals(mainMealList.get(i).getStrMeal())) {
+                    mealObj = mainMealList.get(i);
+                }
+            }
+
+            Log.d("TAG", "Index cua meal la " + mealObj.toString());
 
             Log.d("TAG", "Meal trong day la: " + mainMealList.get(5).toString());
 
@@ -88,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
             // Current meal position
             // Get one meal object
-            Meal mealObj = mainMealList.get(7);
+
 
             // Meal obj name
             TextView mealObjName = (TextView) findViewById(R.id.name_recipe);
@@ -118,16 +130,17 @@ public class MainActivity extends AppCompatActivity {
                         .into(mealObjImage);
             }
 
+            Meal finalMealObj = mealObj;
             mealObjImage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Log.d("Hello","The function OnClick is called");
                     AlertDialog alert = new AlertDialog.Builder(MainActivity.this).create();
                     // alert.setView(mealObjImage);, causing crash, fix later
-                    alert.setTitle(mealObj.getStrMeal());
-                    alert.setMessage("AREA: " + mealObj.getStrArea()+ "\n\n" +
-                                     "CATEGORIES: " + mealObj.getStrCategory() + "\n\n" +
-                                     "TAGS: " + mealObj.getStrTags());
+                    alert.setTitle(finalMealObj.getStrMeal());
+                    alert.setMessage("AREA: " + finalMealObj.getStrArea()+ "\n\n" +
+                                     "CATEGORIES: " + finalMealObj.getStrCategory() + "\n\n" +
+                                     "TAGS: " + finalMealObj.getStrTags());
                     alert.show();
                 }
             });
@@ -265,6 +278,7 @@ public class MainActivity extends AppCompatActivity {
             /*
             Youtube View
              */
+            Meal finalMealObj1 = mealObj;
             btnPlay.setOnClickListener(view ->{
                 YouTubePlayerView youTubePlayerView = new YouTubePlayerView(MainActivity.this);
                 getLifecycle().addObserver(youTubePlayerView);
@@ -272,7 +286,7 @@ public class MainActivity extends AppCompatActivity {
                 youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
                     @Override
                     public void onReady(@NonNull YouTubePlayer youTubePlayer) {
-                        String youtubeURL = mealObj.getStrYoutube();
+                        String youtubeURL = finalMealObj1.getStrYoutube();
 
                         String pattern = "(?<=youtu.be/|watch\\?v=|/videos/|embed\\/)[^#\\&\\?]*";
 
